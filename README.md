@@ -1,11 +1,22 @@
 jquery.simpleCenter
 ===================
 
-Simple jquery plugin to center an element within another element.
+Simple jquery plugin to center an element within another element. Takes the selector of the containing element as an
+argument.
 
 ## How to use
 
-Just
+###HTML
+```html
+<div id="container">
+<div id="centered"></div>
+</div>
+```
+
+###JavaScript
+```javascript
+$('#centered').center('#container');
+```
 
 ## Build Dependencies
 
