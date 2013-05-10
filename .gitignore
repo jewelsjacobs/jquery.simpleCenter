@@ -40,3 +40,5 @@ Thumbs.db
 /.idea
 
 /node_modules
+grunt.js
+README.md.txt
