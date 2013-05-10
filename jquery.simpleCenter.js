@@ -26,12 +26,12 @@
 
         var elObj = {
                 'left': {
-                    'centerEl': this.width(),
-                    'container': containerEl.width()
+                    'centerEl': this.outerWidth(),
+                    'container': containerEl.outerWidth()
                 },
                 'top': {
-                    'centerEl': this.height(),
-                    'container': containerEl.height()
+                    'centerEl': this.outerHeight(),
+                    'container': containerEl.outerHeight()
                 }
             },
             pos;

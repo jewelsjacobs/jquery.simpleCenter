@@ -6,6 +6,8 @@ argument.
 
 ## How to use
 
+[Demo jsfiddle](http://jsfiddle.net/jewelsjacobs/VaHLz/18/)
+
 ###HTML
 ```html
 <div id="container">
