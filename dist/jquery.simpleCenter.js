@@ -1,37 +1,81 @@
-/*! Simple Center jQuery Plugin - v0.1.0 - 2013-05-10
+/*! Simple Center jQuery Plugin - v0.1.0 - 2013-05-11
 * https://github.com/jewelsjacobs/jquery.simpleCenter
 *
 * Simple jquery plugin to center an element within another element.
 * Takes the selector of the containing element as an argument.
 *
 * Copyright (c) 2013 Julia Jacobs; Licensed MIT */
-(function($) {
+(function ($) {
 
-  // Collection method.
-  $.fn.awesome = function() {
-    return this.each(function(i) {
-      // Do something awesome to each selected element.
-      $(this).html('awesome' + i);
-    });
-  };
+    var $container, $obj;
 
-  // Static method.
-  $.awesome = function(options) {
-    // Override default options with passed-in options.
-    options = $.extend({}, $.awesome.options, options);
-    // Return something awesome.
-    return 'awesome' + options.punctuation;
-  };
+    function setContainerToParentSize() {
+        $container.css({
+            'height': $obj.parent().outerHeight(),
+            'width': $obj.parent().outerWidth(),
+            'position': 'relative'
+        });
+    }
 
-  // Static method default options.
-  $.awesome.options = {
-    punctuation: '.'
-  };
+    function setContainerToWindowSize() {
+        $container.css({
+            'height': $(window).height(),
+            'width': $(window).width(),
+            'position': 'relative'
+        });
+    }
 
-  // Custom selector.
-  $.expr[':'].awesome = function(elem) {
-    // Is this element awesome?
-    return $(elem).text().indexOf('awesome') !== -1;
-  };
+    function setContainer(opts) {
+        // create container if not given
+        $container = (!opts.container) ? $('<div></div>') : (opts.container instanceof jQuery) ? opts.container : $(opts.container);
 
-}(jQuery));
+        if (opts.inWindow && !opts.container) {
+            setContainerToWindowSize();
+        }
+
+        if (opts.toParent && !opts.container) {
+            setContainerToParentSize();
+        }
+
+        if ($obj.parent().selector != $container.selector) {
+            $obj.appendTo($container);
+        }
+    }
+
+    // add styles to center $obj
+    function setStyles() {
+        var elObj = {
+                'left': {
+                    'obj': $obj.outerWidth(),
+                    'container': $container.outerWidth()
+                },
+                'top': {
+                    'obj': $obj.outerHeight(),
+                    'container': $container.outerHeight()
+                }
+            },
+            pos;
+
+        $obj.css('position', 'absolute');
+
+        $.each(elObj, function (key, value) {
+            pos = Math.round((value.container - value.obj) / 2) + 'px';
+            $obj.css(key, pos);
+        });
+    }
+
+    $.fn.center = function (options) {
+        var opts = $.extend({}, $.fn.center.defaults, options);
+        $obj = this;
+        setContainer(opts);
+        setStyles();
+        return $obj;
+    };
+
+    $.fn.center.defaults = {
+        'container': false,
+        'inWindow': false,
+        'toParent': false
+    };
+
+})(jQuery);
