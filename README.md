@@ -1,5 +1,7 @@
 # Simple Center jQuery Plugin
 
+[![Build Status](https://travis-ci.org/jewelsjacobs/jquery.simpleCenter.png)](https://travis-ci.org/jewelsjacobs/jquery.simpleCenter)
+
 Simple jquery plugin to center an element within another element.
 
 ## Getting Started
