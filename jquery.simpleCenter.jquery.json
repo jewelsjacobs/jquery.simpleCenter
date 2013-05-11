@@ -1,0 +1,27 @@
+{
+  "name": "jquery.simpleCenter",
+  "title": "Simple Center jQuery Plugin",
+  "description": "Simple jquery plugin to center an element within another element.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jewelsjacobs/jquery.simpleCenter",
+  "author": {
+    "name": "Julia Jacobs",
+    "email": "jjacobs2000@me.com",
+    "url": "http://html5devgal.wordpress.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jewelsjacobs/jquery.simpleCenter.git"
+  },
+  "bugs": "https://github.com/jewelsjacobs/jquery.simpleCenter/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jewelsjacobs/jquery.simpleCenter/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "keywords": []
+}
