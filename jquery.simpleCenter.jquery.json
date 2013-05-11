@@ -2,6 +2,7 @@
   "name": "jquery.simpleCenter",
   "title": "Simple Center jQuery Plugin",
   "description": "Simple jquery plugin to center an element within another element.",
+  "long_desc": "Takes the selector of the containing element as an argument.",
   "version": "0.1.0",
   "homepage": "https://github.com/jewelsjacobs/jquery.simpleCenter",
   "author": {

@@ -8,7 +8,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('jquery.simpleCenter.jquery.json'),
     banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-      '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
+      '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>*\n' +
+      '* <%= pkg.description %>\n* <%= pkg.long_desc %>\n*\n' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
@@ -30,6 +31,14 @@ module.exports = function(grunt) {
       dist: {
         src: ['src/<%= pkg.name %>.js'],
         dest: 'dist/<%= pkg.name %>.js'
+      }
+    },
+    docco: {
+      test : {
+        src: ['src/<%= pkg.name %>.js'],
+        options: {
+          output: 'docs/'
+        }
       }
     },
     uglify: {
@@ -94,8 +103,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-docco');
 
   // Default task.
-  grunt.registerTask('default', ['connect', 'jshint', 'qunit', 'clean', 'concat', 'uglify']);
-  grunt.registerTask('test', ['connect', 'jshint', 'qunit']);
+  grunt.registerTask('default', ['connect', 'jshint', 'qunit', 'clean', 'concat', 'uglify', 'docco']);
+  grunt.registerTask('test', ['connect', 'jshint', 'qunit', 'docco']);
 };

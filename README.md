@@ -15,18 +15,25 @@ In your web page:
 ```html
 <script src="jquery.js"></script>
 <script src="dist/jquery.simpleCenter.min.js"></script>
-<script>
-jQuery(function($) {
-  $.awesome(); // "awesome"
-});
-</script>
 ```
 
 ## Documentation
-_(Coming soon)_
+
+### How to use
+#### HTML
+```html
+<div id="container">
+  <div id="centered"></div>
+</div>
+```
+
+#### JavaScript
+```javascript
+$('#centered').center('#container');
+```
 
 ## Examples
-_(Coming soon)_
+[Demo jsfiddle](http://jsfiddle.net/jewelsjacobs/VaHLz/18/)
 
 ## Release History
 _(Nothing yet)_
