@@ -1,7 +1,7 @@
 {
     "name": "jquery.simpleCenter",
     "title": "Simple Center jQuery Plugin",
-    "description": "Simple jQuery plugin to center an element within another element.",
+    "description": "Simple jQuery plugin to both horizontally and vertically center an element within another element.",
     "version": "0.1.0",
     "homepage": "https://github.com/jewelsjacobs/jquery.simpleCenter",
     "author": {
