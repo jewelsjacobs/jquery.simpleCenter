@@ -38,7 +38,7 @@
             setContainerToParentSize();
         }
 
-        if ($obj.parent().selector != $container.selector) {
+        if ($obj.parent().selector !== $container.selector) {
             $obj.appendTo($container);
         }
     }

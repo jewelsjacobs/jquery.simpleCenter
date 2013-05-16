@@ -1,7 +1,7 @@
-/*! Simple Center jQuery Plugin - v0.1.0 - 2013-05-11
+/*! Simple Center jQuery Plugin - v0.1.0 - 2013-05-16
 * https://github.com/jewelsjacobs/jquery.simpleCenter
 *
-* Simple jquery plugin to center an element within another element.
+* Simple jQuery plugin to center an element within another element.
 * Takes the selector of the containing element as an argument.
 *
 * Copyright (c) 2013 Julia Jacobs; Licensed MIT */
@@ -37,7 +37,7 @@
             setContainerToParentSize();
         }
 
-        if ($obj.parent().selector != $container.selector) {
+        if ($obj.parent().selector !== $container.selector) {
             $obj.appendTo($container);
         }
     }
