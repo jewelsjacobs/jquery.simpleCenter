@@ -19,6 +19,16 @@ In your web page:
 
 ## Documentation
 
+This plugin has the following options:
+container - selector || false default is false
+Specify the selector of the containing element.  If no containing element, (ie. just center to parent or window)
+this is false.
+inWindow - true || false default is false
+Center to browser window
+toParent - true || false default if false
+Center to parent
+
+
 ### How to use
 #### HTML
 ```html
@@ -29,11 +39,12 @@ In your web page:
 
 #### JavaScript
 ```javascript
-$('#centered').center('#container');
+    $('#centered').center({
+      'container': '#container',
+      'inWindow': false,
+      'toParent': false
+    });
 ```
 
 ## Examples
-[Demo jsfiddle](http://jsfiddle.net/jewelsjacobs/VaHLz/18/)
-
-## Release History
-_(Nothing yet)_
+[Demo jsfiddle](http://jsfiddle.net/jewelsjacobs/U6JBC/)
