@@ -1,3 +1,6 @@
+## Do not use this plugin!
+jQuery UI already has a [position()](http://api.jqueryui.com/position/) function that centers perfectly.
+
 # Simple Center jQuery Plugin
 
 [![Build Status](https://travis-ci.org/jewelsjacobs/jquery.simpleCenter.png)](https://travis-ci.org/jewelsjacobs/jquery.simpleCenter)
